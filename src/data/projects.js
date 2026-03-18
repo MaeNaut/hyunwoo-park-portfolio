@@ -2,6 +2,7 @@ import terrariaCover from "../assets/projects/terraria/terraria-mod-cover.png";
 import terrariaEnemyVideo from "../assets/projects/terraria/terraria-enemy.mp4";
 import terrariaBossWebp from "../assets/projects/terraria/terraria-boss.webp";
 import arduinoCover from "../assets/projects/arduino/arduino-cover.jpg";
+import igme540Cover from "../assets/projects/igme540/igme540-cover.png";
 import mouseOnlyCover from "../assets/projects/gungeon/mouse-only-mod-cover.png";
 import hyperdeathCover from "../assets/projects/hyperdeath/hyperdeath-cover.png";
 import hyperdeathTrailer from "../assets/projects/hyperdeath/hyperdeath-trailer.mp4";
@@ -103,6 +104,47 @@ const projects = [
         ]
     },
     {
+        slug: "direct3d-11-graphics-engine",
+        title: "Direct3D 11 Graphics Engine",
+        period: "Jan 2025 - May 2025",
+        course: "IGME-540 - Foundations of Game Graphics Programming",
+        summary:
+            "A real-time rendering engine built in C++ using Direct3D 11, featuring mesh loading, lighting, shadow mapping, and post-processing.",
+        role: "Rendering / Engine Programmer",
+        collaboration: "solo",
+        stack: ["C++", "Direct3D 11", "HLSL", "Graphics Programming", "Engine Programming", "Rendering Pipeline", "Shaders", "ImGui"],
+        image: igme540Cover,
+        featured: true,
+        extraMedia: [
+            youtubeMedia("Demo Video", "https://www.youtube.com/embed/U4PZHfgzPW4?si=ZjQQApvVxQ1UK7As"),
+        ],
+        sections: {
+            overview:
+                "This project is a custom real-time rendering engine built in C++ with Direct3D 11 for a graphics programming course. I built core rendering features such as mesh loading, materials, multiple lights, shadow mapping, skybox rendering, and post-processing. The project helped me understand how the graphics pipeline, scene structure, and rendering systems work together in a real-time engine.",
+            contributions: [
+                "Implemented rendering features using Direct3D 11 including vertex buffers, index buffers, and shader binding.",
+                "Built scene structure using GameEntity, Transform, Material, and Mesh classes.",
+                "Implemented camera movement, input handling, and world transform updates.",
+                "Added lighting, shadow mapping, and skybox rendering.",
+                "Implemented post-processing effects including chromatic aberration.",
+                "Loaded models and textures from external files and applied them to materials",
+                "Used ImGui for debugging controls and real-time parameter tuning"
+            ],
+            challenges: [
+                "Managing Direct3D resources such as buffers, shader views, and render targets.",
+                "Debugging rendering issues when objects or shaders did not display correctly.",
+                "Keeping transform, camera, and projection matrices synchronized.",
+                "Implementing shadow mapping without breaking existing lighting code.",
+                "Handling post-processing passes while keeping real-time performance."
+            ],
+            outcome:
+                "This project gave me a much stronger understanding of real-time rendering, graphics APIs, and engine architecture. I got hands-on experience with buffers, shaders, textures, render targets, and draw calls while building features from the ground up. It also made me more comfortable working with C++ in a larger codebase and connecting multiple rendering systems in real time."
+        },
+        links: [
+            githubLink("https://github.com/MaeNaut/IGME-540"),
+        ]
+    },
+    {
         slug: "mouse-only-mod",
         title: "Mouse Only Mod",
         period: "Jan 2025 - May 2025",
@@ -113,7 +155,7 @@ const projects = [
         collaboration: "solo",
         stack: ["ETGMod", "C#", "Modding", "AI", "Input Systems"],
         image: mouseOnlyCover,
-        featured: true,
+        featured: false,
         extraMedia: [
             youtubeMedia("Demo Video", "https://www.youtube.com/embed/RGl7DA1Xy1c?si=D3PophNjSQnsGIkM"),
         ],
@@ -187,7 +229,7 @@ const projects = [
         collaboration: "solo",
         stack: ["HTML", "CSS", "JavaScript", "PixiJS", "API", "Frontend Development"],
         image: gamePageCover,
-        featured: false,
+        featured: true,
         sections: {
             overview:
                 "This work combines three web development projects built with HTML, CSS, and JavaScript. The projects include a custom game information page, a Giphy search tool, and a small browser game made with PixiJS. They helped me learn frontend basics, API use, and interactive programming.",

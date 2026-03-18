@@ -12,6 +12,7 @@ import koreanPronunciation from "../assets/profile/hyunwoo-korean-pronunciation.
 
 export default function Home({ profile, projects }) {
     const featuredProjects = projects.filter((p) => p.featured);
+    const [primaryFeaturedProject, ...secondaryFeaturedProjects] = featuredProjects;
     const englishAudioRef = useRef(null);
     const koreanAudioRef = useRef(null);
     const pronunciationRef = useRef(null);
@@ -51,6 +52,29 @@ export default function Home({ profile, projects }) {
             document.removeEventListener("touchstart", handlePointerDown);
         };
     }, [isPronunciationOpen]);
+
+    const renderFeaturedCard = (project, className = "") => (
+        <Link
+            key={project.slug}
+            to={`/projects/${project.slug}`}
+            state={{ fromPath: location.pathname }}
+            onClick={() => saveScrollPosition(location.pathname)}
+            className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 ${className}`}
+        >
+            <ProjectBadge project={project} className="absolute right-4 top-4 z-10" />
+            <div className="aspect-[16/10] overflow-hidden">
+                <ProjectCover project={project} hoverScale />
+            </div>
+            <div className="space-y-4 p-6">
+                <div>
+                    <p className="text-sm text-neutral-400">{project.period}</p>
+                    {project.course && (<p className="text-xs text-neutral-500">{project.course}</p>)}
+                    <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
+                </div>
+                <p className="text-sm leading-6 text-neutral-300">{project.summary}</p>
+            </div>
+        </Link>
+    );
 
     return (
         <div className="space-y-24">
@@ -209,30 +233,64 @@ export default function Home({ profile, projects }) {
                     eyebrow="Projects"
                     title="Featured work"
                 />
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {featuredProjects.map((project) => (
+                {primaryFeaturedProject ? (
+                    <div className="space-y-6 lg:space-y-8">
                         <Link
-                            key={project.slug}
-                            to={`/projects/${project.slug}`}
+                            to={`/projects/${primaryFeaturedProject.slug}`}
                             state={{ fromPath: location.pathname }}
                             onClick={() => saveScrollPosition(location.pathname)}
-                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20"
+                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch"
                         >
-                            <ProjectBadge project={project} className="absolute right-4 top-4 z-10" />
-                            <div className="aspect-[16/10] overflow-hidden">
-                                <ProjectCover project={project} hoverScale />
+                            <ProjectBadge project={primaryFeaturedProject} className="absolute right-4 top-4 z-10" />
+                            <div className="aspect-[16/10] overflow-hidden lg:h-full lg:min-h-[21rem] lg:aspect-auto">
+                                <ProjectCover
+                                    project={primaryFeaturedProject}
+                                    hoverScale
+                                    imageClassName="h-full w-full object-cover object-center"
+                                />
                             </div>
-                            <div className="space-y-4 p-6">
+                            <div className="space-y-4 p-6 lg:flex lg:flex-col lg:justify-between lg:p-8">
                                 <div>
-                                    <p className="text-sm text-neutral-400">{project.period}</p>
-                                    {project.course && (<p className="text-xs text-neutral-500">{project.course}</p>)}
-                                    <h3 className="mt-2 text-xl font-semibold text-white md:min-h-[3.5rem]">{project.title}</h3>
+                                    <p className="text-sm text-neutral-400">{primaryFeaturedProject.period}</p>
+                                    {primaryFeaturedProject.course && (
+                                        <p className="text-xs text-neutral-500">{primaryFeaturedProject.course}</p>
+                                    )}
+                                    <h3 className="mt-2 text-2xl font-semibold text-white lg:text-3xl">
+                                        {primaryFeaturedProject.title}
+                                    </h3>
                                 </div>
-                                <p className="text-sm leading-6 text-neutral-300">{project.summary}</p>
+                                <p className="max-w-2xl text-sm leading-6 text-neutral-300 lg:text-base">
+                                    {primaryFeaturedProject.summary}
+                                </p>
+                                <div className="space-y-4 border-t border-white/10 pt-5">
+                                    <div>
+                                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">Role</p>
+                                        <p className="mt-2 text-sm text-neutral-200 lg:text-base">
+                                            {primaryFeaturedProject.role}
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {primaryFeaturedProject.stack.slice(0, 4).map((item) => (
+                                                <span
+                                                    key={item}
+                                                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300"
+                                                >
+                                                    {item}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </Link>
-                    ))}
-                </div>
+
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            {secondaryFeaturedProjects.map((project) => renderFeaturedCard(project))}
+                        </div>
+                    </div>
+                ) : null}
             </section>
 
             <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">

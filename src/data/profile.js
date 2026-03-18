@@ -39,11 +39,11 @@ const profile = {
     skills: [
         {
             category: "Languages",
-            items: ["C#", "C++", "JavaScript", "HTML", "CSS"]
+            items: ["C#", "C++", "HLSL", "JavaScript", "HTML", "CSS"]
         },
         {
             category: "Engines & Tools",
-            items: ["Unity", "MonoGame", "tModLoader", "ETGMod", "React", "PixiJS", "Git", "GitHub"]
+            items: ["Unity", "MonoGame", "Direct3D 11", "tModLoader", "ETGMod", "React", "PixiJS", "Git", "GitHub"]
         },
         {
             category: "Gameplay & Systems",
@@ -51,7 +51,7 @@ const profile = {
         },
         {
             category: "Technical Skills",
-            items: ["Frontend Development", "API Integration", "Physical Computing", "Serial Communication", "Modding"]
+            items: ["Frontend Development", "Graphics Programming", "Engine Programming", "API Integration", "Physical Computing", "Serial Communication", "Modding"]
         }
     ]
 };
