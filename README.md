@@ -1,12 +1,47 @@
-# React + Vite
+# Hyunwoo Park Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains my personal portfolio website.
 
-Currently, two official plugins are available:
+It highlights my work in game development, graphics programming, modding, web development, and software projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- Font Awesome
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Multi-page portfolio with URL-based routing
+- Project detail pages for featured and archived work
+- Responsive layout for desktop, tablet, and mobile
+- Resume and contact pages
+- Embedded videos, images, and external project links
+
+## Project Highlights
+
+- Terraria modding project with custom enemy and boss AI
+- Direct3D 11 graphics engine project built in C++
+- Web development project collection
+- Team game project: Hyperdeath Robotika
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Notes
+
+- The live site link will be added after deployment.
+- Some project media uses embedded external video links.
+- This portfolio was built through my own design and development process, with AI-assisted support for implementation and iteration.
