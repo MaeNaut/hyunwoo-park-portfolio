@@ -10,10 +10,9 @@ const profile = {
     github: "https://github.com/MaeNaut",
     heroImage: profilePhoto,
     about: [
-        "I am a Game Design and Development student at RIT. I like building interactive projects with a focus on gameplay, UI, input, and player experience.",
-        "My main background is in C#, Unity, and gameplay programming. I have worked on game mods, combat systems, physics, HUDs, and AI in both team and solo projects.",
-        "I also have experience with web development using JavaScript, HTML, CSS, React, and APIs. This has helped me work on both game projects and user-facing web projects.",
-        "In all of my work, I try to make things clear, responsive, and well organized, whether I am building a game system, a physical computing project, or a small web app."
+        "I am a Game Design and Development student at RIT. I enjoy building interactive projects with a focus on gameplay, UI, input, and player experience.",
+        "My main background is in C#, Unity, and gameplay programming. I have worked on mods, combat systems, physics, HUDs, and AI in both team and solo projects.",
+        "I also build web projects with JavaScript, HTML, CSS, React, and APIs. In all of my work, I try to keep things clear, responsive, and organized."
     ],
     education: [
         {

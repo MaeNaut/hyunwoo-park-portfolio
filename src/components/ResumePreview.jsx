@@ -70,8 +70,8 @@ function PreviewSection({ title, lines = [], headerLines, sideLine }) {
 
 export default function ResumePreview({ name }) {
     return (
-        <div className="mt-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-5">
-            <div className="mx-auto max-w-[18.5rem] rounded-[1.25rem] bg-white px-5 py-6 text-neutral-900 shadow-2xl shadow-black/25">
+        <div className="mt-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-4 sm:p-5">
+            <div className="mx-auto w-full max-w-[14rem] rounded-[1.25rem] bg-white px-4 py-5 text-neutral-900 shadow-2xl shadow-black/25 min-[420px]:max-w-[16rem] sm:max-w-[18.5rem] sm:px-5 sm:py-6">
                 <div>
                     <p className="text-[1.3rem] font-bold leading-none text-neutral-950">{name}</p>
                     <div className="mt-2.5 space-y-1.5">

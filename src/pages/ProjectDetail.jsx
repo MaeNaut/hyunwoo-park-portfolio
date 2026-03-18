@@ -19,13 +19,13 @@ export default function ProjectDetail({ project }) {
                         <div>
                             <p className="text-sm text-neutral-400">{project.period}</p>
                             {project.course && (<p className="text-sm text-neutral-500">{project.course}</p>)}
-                            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-white">{project.title}</h1>
+                            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">{project.title}</h1>
                         </div>
                         <p className="max-w-3xl text-neutral-300">{project.sections.overview}</p>
 
-                        <div className="flex flex-wrap gap-3">
+                        <div className="grid gap-3 sm:flex sm:flex-wrap">
                             {project.links.map((link) => (
-                                <ProjectLinkButton key={`${link.label}-${link.url}`} link={link} />
+                                <ProjectLinkButton key={`${link.label}-${link.url}`} link={link} fullWidthOnNarrow />
                             ))}
                         </div>
                     </div>
@@ -85,13 +85,13 @@ export default function ProjectDetail({ project }) {
                 ))
             }
 
-            <section className="grid gap-6 lg:grid-cols-3">
+            <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
                     <p className="text-sm text-neutral-400">Role</p>
                     <p className="mt-3 text-white">{project.role}</p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 lg:col-span-2">
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:col-span-2 lg:col-span-2">
                     <p className="text-sm text-neutral-400">Tech Stack</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                         {project.stack.map((item) => (
@@ -125,7 +125,7 @@ export default function ProjectDetail({ project }) {
                                 Supporting material and visual references used during the project process.
                             </p>
 
-                            <div className="grid gap-6 lg:grid-cols-2">
+                            <div className="grid gap-6 md:grid-cols-2">
                                 {project.references.map((group, groupIndex) => (
                                     <div key={`${group.title}-${groupIndex}`} className="space-y-3">
                                         {group.title ? (
@@ -139,6 +139,7 @@ export default function ProjectDetail({ project }) {
                                                 <ProjectLinkButton
                                                     key={`${group.title}-${reference.label}-${reference.url}`}
                                                     link={reference}
+                                                    compact
                                                 />
                                             ))}
                                         </div>

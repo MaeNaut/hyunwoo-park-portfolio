@@ -17,24 +17,28 @@ function getLinkDisplay(link) {
     return {
         icon: iconMap[link.icon] ?? faArrowUpRightFromSquare,
         className: isPrimary
-            ? "inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-900"
-            : "inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-white",
+            ? "inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-900"
+            : "inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-white",
     };
 }
 
-export default function ProjectLinkButton({ link }) {
+export default function ProjectLinkButton({ link, compact = false, fullWidthOnNarrow = false }) {
     if (!link?.url) {
         return null;
     }
 
     const { icon, className } = getLinkDisplay(link);
+    const sizeClassName = compact
+        ? "px-3 py-1.5 text-xs sm:text-sm"
+        : "px-4 py-2 text-sm";
+    const layoutClassName = fullWidthOnNarrow ? " max-[380px]:flex max-[380px]:w-full max-[380px]:justify-center" : "";
 
     return (
         <a
             href={link.url}
             target="_blank"
             rel="noreferrer"
-            className={className}
+            className={`${className.replace("px-4 py-2 text-sm", sizeClassName)}${layoutClassName}`}
         >
             <FontAwesomeIcon icon={icon} className="fa-lg" /> {link.label}
         </a>

@@ -1,9 +1,7 @@
 # TODO
 
 ## Now
-
-- Refactor repeated UI and data patterns where the project structure has grown more complex.
-- Add helpful comments in places where the project logic or data structure is not immediately obvious.
+- (No current items)
 
 ## Later
 

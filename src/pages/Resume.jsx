@@ -40,13 +40,13 @@ export default function Resume({ profile }) {
             />
 
             <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-                    <h3 className="text-2xl font-semibold text-white">Resume</h3>
+                <div className="min-w-0 rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+                    <h3 className="text-xl font-semibold text-white sm:text-2xl">Resume</h3>
 
                     <ResumePreview name={profile.name} />
 
-                    <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
-                        <div className="flex flex-wrap gap-3">
+                    <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+                        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                             {resumeActions.map((action) => (
                                 <a
                                     key={action.label}
@@ -68,8 +68,8 @@ export default function Resume({ profile }) {
                     </div>
                 </div>
 
-                <div className="self-start rounded-3xl border border-white/10 bg-white/5 p-8">
-                    <h3 className="text-2xl font-semibold text-white">External Links</h3>
+                <div className="min-w-0 self-start rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+                    <h3 className="text-xl font-semibold text-white sm:text-2xl">External Links</h3>
                     <div className="mt-6 space-y-4 text-neutral-300">
                         {externalLinks.map((link) => (
                             <IconLinkRow key={link.label} {...link} />

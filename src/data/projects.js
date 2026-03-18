@@ -44,9 +44,7 @@ const projects = [
         featured: true,
         sections: {
             overview:
-                `This Terraria mod was made by a 5-person team using tModLoader.  
-                I worked on enemies and a boss, including AI, attack patterns, and spawn behavior.
-                I made four custom enemies, one boss, and an item and furniture system that summons the boss.`,
+                "This Terraria mod was made by a 5-person team using tModLoader. I worked on enemies and a boss, including AI, attack patterns, and spawn behavior. I made four custom enemies, one boss, and an item and furniture system that summons the boss.",
             contributions: [
                 "Implemented four custom enemies and one boss using C# with tModLoader, including AI logic, attack patterns, and animation control.",
                 "Built state-based AI systems to control enemy behavior, targeting, movement, and projectile attacks.",
@@ -61,8 +59,7 @@ const projects = [
                 "Debugging AI behavior, spawn logic, and custom physics inside an existing game without access to the original source code."
             ],
             outcome:
-                `This project helped me understand game AI, modding tools, and how to work in an existing codebase.  
-                I also got more practice with state-based behavior, custom physics, animation control, and teamwork using version control.`
+                "This project helped me understand game AI, modding tools, and how to work in an existing codebase. I also got more practice with state-based behavior, custom physics, animation control, and teamwork using version control."
         },
         links: [
             githubLink("https://github.com/kaigidwani/TheGoodTheBadAndTheIntoxicated"),
@@ -84,9 +81,7 @@ const projects = [
         featured: false,
         sections: {
             overview:
-                `This work brings together four Arduino projects from a physical computing class.
-                I used sensors, LEDs, LCD output, sound, and serial communication across the projects.
-                They focused on hardware input, alternative controls, and connecting Arduino with Unity.`,
+                "This work brings together four Arduino projects from a physical computing class. I used sensors, LEDs, LCD output, sound, and serial communication across the projects. They focused on hardware input, alternative controls, and connecting Arduino with Unity.",
             contributions: [
                 "Built multiple Arduino prototypes using sensors such as DHT11, MPU6050, and force sensitive resistors.",
                 "Designed and assembled circuits on a breadboard with components including LEDs, an LCD, a piezo, and sensor modules.",
@@ -101,9 +96,7 @@ const projects = [
                 "Integrating Arduino data with Unity in a stable way while keeping the projects simple enough to complete on time."
             ],
             outcome:
-                `These projects made me more comfortable with Arduino, circuits, and sensor-based interaction design.
-                I got more practice reading hardware input, controlling physical output, and debugging both code and wiring.
-                They also helped me connect physical systems with interactive Unity projects.`
+                "These projects made me more comfortable with Arduino, circuits, and sensor-based interaction design. I got more practice reading hardware input, controlling physical output, and debugging both code and wiring. They also helped me connect physical systems with interactive Unity projects."
         },
         links: [
             wordpressLink("https://hp5817igme470.wordpress.com/"),
@@ -115,7 +108,7 @@ const projects = [
         period: "Jan 2025 - May 2025",
         course: "IGME-560 - AI for Game Environments",
         summary:
-            "A Enter the Gungeon mod that enables mouse-only play by overriding default input and automating navigation and dodging.",
+            "An Enter the Gungeon mod that enables mouse-only play by overriding default input and automating navigation and dodging.",
         role: "Gameplay / Systems Programmer",
         collaboration: "solo",
         stack: ["ETGMod", "C#", "Modding", "AI", "Input Systems"],
@@ -126,9 +119,7 @@ const projects = [
         ],
         sections: {
             overview:
-                `This mod makes Enter the Gungeon playable with only the mouse.
-                Outside combat, the player moves toward the cursor. During combat, the mod controls movement and dodging by checking nearby threats.
-                I built it in C# with ETGMod, with a focus on input systems, gameplay systems, and rule-based AI.`,
+                "This mod makes Enter the Gungeon playable with only the mouse. Outside combat, the player moves toward the cursor. During combat, the mod controls movement and dodging by checking nearby threats. I built it in C# with ETGMod, with a focus on input systems, gameplay systems, and rule-based AI.",
             contributions: [
                 "Implemented a mouse-only control system in C# by overriding the default player input used by Enter the Gungeon through ETGMod.",
                 "Created dual-mode movement logic that switches between cursor-based movement outside combat and automated movement during combat.",
@@ -143,9 +134,7 @@ const projects = [
                 "Balancing automation and responsiveness so the player still felt controllable even when movement was handled by the mod."
             ],
             outcome:
-                `This project helped me improve my gameplay programming, input systems, and AI logic.
-                I also got more practice reverse-engineering and debugging behavior inside an existing game.
-                It made me more confident changing systems in C# without breaking the original game.`
+                "This project helped me improve my gameplay programming, input systems, and AI logic. I also got more practice reverse-engineering and debugging behavior inside an existing game. It made me more confident changing systems in C# without breaking the original game."
         },
         links: [
             githubLink("https://github.com/MaeNaut/EtG-MouseOnlyMod"),
@@ -168,9 +157,7 @@ const projects = [
         featured: true,
         sections: {
             overview:
-                `Hyperdeath Robotika is a dieselpunk top-down co-op shooter made in Unity by a 5-person team.
-                Players can switch between four different characters during gameplay, so the camera and HUD needed to stay clear.
-                I worked on gameplay systems, camera behavior, and UI/HUD implementation.`,
+                "Hyperdeath Robotika is a dieselpunk top-down co-op shooter made in Unity by a 5-person team. Players can switch between four different characters during gameplay, so the camera and HUD needed to stay clear. I worked on gameplay systems, camera behavior, and UI/HUD implementation.",
             contributions: [
                 "Implemented UI and HUD systems including health bars, character indicators, and menu screens using C# in Unity.",
                 "Developed camera follow and control logic for top-down gameplay.",
@@ -179,13 +166,11 @@ const projects = [
             ],
             challenges: [
                 "Making sure the UI and camera stayed clear while switching between multiple characters during combat.",
-                "Ensuring the active character was always visible and easy to indentify during fast-paced action.",
+                "Ensuring the active character was always visible and easy to identify during fast-paced action.",
                 "Working with the version control without making critical merge conflicts in Unity scenes and prefabs.",
             ],
             outcome:
-                `This project improved my Unity and C# skills, especially in UI, HUD, and camera work.
-                It also taught me how gameplay systems, visual clarity, and player feedback need to work together during combat.
-                Working with a team helped me get better at sharing responsibilities and organizing code.`
+                "This project improved my Unity and C# skills, especially in UI, HUD, and camera work. It also taught me how gameplay systems, visual clarity, and player feedback need to work together during combat. Working with a team helped me get better at sharing responsibilities and organizing code."
         },
         links: [
             githubLink("https://github.com/Auden-Clifford/Hyperdeath-Robotika"),
@@ -205,9 +190,7 @@ const projects = [
         featured: false,
         sections: {
             overview:
-                `This work combines three web development projects built with HTML, CSS, and JavaScript.
-                The projects include a custom game information page, a Giphy search tool, and a small browser game made with PixiJS.
-                They helped me learn frontend basics, API use, and interactive programming.`,
+                "This work combines three web development projects built with HTML, CSS, and JavaScript. The projects include a custom game information page, a Giphy search tool, and a small browser game made with PixiJS. They helped me learn frontend basics, API use, and interactive programming.",
             contributions: [
                 "Built a custom game information webpage using HTML and CSS, referencing a provided concept image and additional visual references for layout and structure.",
                 "Implemented a GIF search tool using the Giphy API with search filters, pagination, and clipboard copy feature.",
@@ -221,9 +204,7 @@ const projects = [
                 "Learning new libraries such as PixiJS while building a working game."
             ],
             outcome:
-                `These projects gave me a strong base in frontend development with HTML, CSS, and JavaScript.
-                I also got experience with APIs, user input, and interactive page behavior.
-                They helped me learn how to organize code for small web apps and browser games.`
+                "These projects gave me a strong base in frontend development with HTML, CSS, and JavaScript. I also got experience with APIs, user input, and interactive page behavior. They helped me learn how to organize code for small web apps and browser games."
         },
         links: [
             externalLink("https://people.rit.edu/hp5817/235/project1/", "Project 1"),
@@ -250,10 +231,7 @@ const projects = [
         featured: false,
         sections: {
             overview:
-                `This group of class projects focuses on gameplay programming and simulation systems in Unity.
-                One project is a top-down shooter with player controls, enemies, scoring, and game-over logic.
-                The other is a boids-style simulation that uses steering behaviors and state changes.
-                Together, they gave me practice building gameplay systems in C#.`,
+                "This group of class projects focuses on gameplay programming and simulation systems in Unity. One project is a top-down shooter with player controls, enemies, scoring, and game-over logic. The other is a boids-style simulation that uses steering behaviors and state changes. Together, they gave me practice building gameplay systems in C#.",
             contributions: [
                 "Implemented player movement, shooting, enemy spawning, and score system in a Unity shooter project.",
                 "Built game over logic, UI display, and collision-based health system.",
@@ -268,9 +246,7 @@ const projects = [
                 "Managing state transitions without breaking existing behavior."
             ],
             outcome:
-                `These projects helped me improve my gameplay programming in Unity, especially movement, collision, and state-based behavior.
-                I also got experience building both action systems and agent simulations in C#.
-                They made me more comfortable debugging complex behavior across multiple scripts.`
+                "These projects helped me improve my gameplay programming in Unity, especially movement, collision, and state-based behavior. I also got experience building both action systems and agent simulations in C#. They made me more comfortable debugging complex behavior across multiple scripts."
         },
         links: [
             gamepadLink("https://igme-202-2231.github.io/project-1-MaeNaut/", "Live Demo 1"),
@@ -311,9 +287,7 @@ const projects = [
         featured: false,
         sections: {
             overview:
-                `Blood of Christ is a 2D stealth platformer made in MonoGame by a 4-person team.
-                The player controls a vampire moving through a church while avoiding enemies and light.
-                I worked on core systems such as physics, collision, level loading, and data-driven map generation.`,
+                "Blood of Christ is a 2D stealth platformer made in MonoGame by a 4-person team. The player controls a vampire moving through a church while avoiding enemies and light. I worked on core systems such as physics, collision, level loading, and data-driven map generation.",
             contributions: [
                 "Implemented 2D physics and collision handling for player, enemies, and level objects.",
                 "Built file I/O system for loading level data and generating maps from external files.",
@@ -327,9 +301,7 @@ const projects = [
                 "Building gameplay systems in MonoGame without engine-level tools."
             ],
             outcome:
-                `This was my first full team game project, so it taught me a lot about how larger systems work together.
-                I got experience with shared code, physics, file-based level systems, and gameplay architecture in C#.
-                It also showed me how important early planning is when a project starts to grow.`
+                "This was my first full team game project, so it taught me a lot about how larger systems work together. I got experience with shared code, physics, file-based level systems, and gameplay architecture in C#. It also showed me how important early planning is when a project starts to grow."
         },
         links: [
             githubLink("https://github.com/yaboiedchoi/Blood-of-Christ"),

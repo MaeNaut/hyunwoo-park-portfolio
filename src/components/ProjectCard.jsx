@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ProjectBadge from "./ProjectBadge";
 import ProjectCover from "./ProjectCover";
+import { saveScrollPosition } from "../utils/scrollMemory";
 
 export default function ProjectCard({ project }) {
+  const location = useLocation();
+
   return (
     <Link
       to={`/projects/${project.slug}`}
+      state={{ fromPath: location.pathname }}
+      onClick={() => saveScrollPosition(location.pathname)}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07]"
     >
       <ProjectBadge project={project} className="absolute right-4 top-4 z-10" />
