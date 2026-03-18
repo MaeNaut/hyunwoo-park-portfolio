@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faCirclePlay, faVolumeHigh, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SectionTitle from "../components/SectionTitle";
+import ProjectBadge from "../components/ProjectBadge";
+import ProjectCover from "../components/ProjectCover";
 import englishPronunciation from "../assets/profile/hyunwoo-english-pronunciation.mp3";
 import koreanPronunciation from "../assets/profile/hyunwoo-korean-pronunciation.mp3";
 
@@ -13,54 +15,13 @@ export default function Home({ profile, projects }) {
     const koreanAudioRef = useRef(null);
 
     const playAudio = (audioRef) => {
+        // Create each audio object only when the user asks for it.
         if (!audioRef.current) {
             audioRef.current = new Audio(audioRef === englishAudioRef ? englishPronunciation : koreanPronunciation);
         }
 
         audioRef.current.currentTime = 0;
         void audioRef.current.play();
-    };
-
-    const renderProjectCover = (project) => {
-        const images = Array.isArray(project.image) ? project.image : [project.image];
-
-        if (images.length === 1) {
-            return (
-                <img
-                    src={images[0]}
-                    alt={project.title}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-            );
-        }
-
-        return (
-            <div
-                className="grid h-full w-full gap-1 bg-white/5"
-                style={{ gridTemplateColumns: `repeat(${images.length}, minmax(0, 1fr))` }}
-            >
-                {images.map((image, index) => (
-                    <div key={`${project.slug}-${index}`} className="overflow-hidden">
-                        <img
-                            src={image}
-                            alt={`${project.title} preview ${index + 1}`}
-                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                        />
-                    </div>
-                ))}
-            </div>
-        );
-    };
-
-    const getProjectBadge = (project) => {
-        const isTeamProject = project.collaboration === "team";
-
-        return {
-            label: isTeamProject ? "Team" : "Solo",
-            className: isTeamProject
-                ? "border-red-400 bg-neutral-950 text-red-300 shadow-lg shadow-red-950/45"
-                : "border-blue-400 bg-neutral-950 text-blue-300 shadow-lg shadow-blue-950/45",
-        };
     };
 
     return (
@@ -222,11 +183,9 @@ export default function Home({ profile, projects }) {
                             to={`/projects/${project.slug}`}
                             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20"
                         >
-                            <span className={`absolute right-4 top-4 z-10 inline-flex h-7 min-w-[3.9rem] items-center justify-center rounded-full border px-3 text-[0.7rem] font-bold uppercase tracking-[0.04em] ${getProjectBadge(project).className}`}>
-                                <span className="relative top-px leading-none">{getProjectBadge(project).label}</span>
-                            </span>
+                            <ProjectBadge project={project} className="absolute right-4 top-4 z-10" />
                             <div className="aspect-[16/10] overflow-hidden">
-                                {renderProjectCover(project)}
+                                <ProjectCover project={project} hoverScale />
                             </div>
                             <div className="space-y-4 p-6">
                                 <div>

@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 
 function RoutedProjectDetail() {
   const { slug } = useParams();
+  // Keep URL lookup here so ProjectDetail can stay focused on rendering.
   const project = projects.find((item) => item.slug === slug);
 
   if (!project) {

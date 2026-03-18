@@ -11,13 +11,25 @@ import shmupCover from "../assets/projects/igme202/shmup-cover.png";
 import boidsCover from "../assets/projects/igme202/boids-cover.png";
 import bloodOfChristCover from "../assets/projects/bloodOfChrist/bloodOfChrist-cover.png";
 import bloodOfChristPlaythrough from "../assets/projects/bloodOfChrist/bloodOfChrist-playthrough.mp4";
+import {
+    externalLink,
+    gamepadLink,
+    githubLink,
+    globeLink,
+    imageMedia,
+    referenceGroup,
+    steamLink,
+    videoMedia,
+    wordpressLink,
+    youtubeMedia,
+} from "./projectBuilders";
 
 const projects = [
     {
         slug: "terraria-mod",
         title: "The Good, The Bad, and The Intoxicated",
-        period: "Aug 2025 – Dec 2025",
-        course: "IGME-424 — Game Modification",
+        period: "Aug 2025 - Dec 2025",
+        course: "IGME-424 - Game Modification",
         summary:
             "A Terraria mod built in a 5-person team featuring custom enemies and bosses with state-machine-based AI.",
         role: "Enemy / Boss Programmer",
@@ -25,21 +37,9 @@ const projects = [
         stack: ["tModLoader", "C#", "Modding", "AI", "State Machines", "Animation"],
         image: terrariaCover,
         extraMedia: [
-            {
-                type: "youtube",
-                title: "Playthrough",
-                src: "https://www.youtube.com/embed/Mq-BWM2v3_4?si=ZrMGJTmKw4iL6LWd"
-            },
-            {
-                type: "video",
-                title: "Enemy Showcase",
-                src: terrariaEnemyVideo
-            },
-            {
-                type: "image",
-                title: "Spider Boss",
-                src: terrariaBossWebp
-            }
+            youtubeMedia("Playthrough", "https://www.youtube.com/embed/Mq-BWM2v3_4?si=ZrMGJTmKw4iL6LWd"),
+            videoMedia("Enemy Showcase", terrariaEnemyVideo),
+            imageMedia("Spider Boss", terrariaBossWebp),
         ],
         featured: true,
         sections: {
@@ -65,16 +65,16 @@ const projects = [
                 I also got more practice with state-based behavior, custom physics, animation control, and teamwork using version control.`
         },
         links: [
-            { label: "GitHub", url: "https://github.com/kaigidwani/TheGoodTheBadAndTheIntoxicated", icon: "github" },
-            { label: "Steam", url: "https://steamcommunity.com/sharedfiles/filedetails/?id=3624097144", icon: "steam" },
-            { label: "NexusMods", url: "https://www.nexusmods.com/terraria/mods/129", icon: "globe" }
+            githubLink("https://github.com/kaigidwani/TheGoodTheBadAndTheIntoxicated"),
+            steamLink("https://steamcommunity.com/sharedfiles/filedetails/?id=3624097144"),
+            globeLink("https://www.nexusmods.com/terraria/mods/129", "NexusMods"),
         ]
     },
     {
         slug: "arduino-interactive-projects",
         title: "Arduino Interactive Projects",
-        period: "Aug 2025 – Dec 2025",
-        course: "IGME-470 — Physical Computing and Alternative Interfaces",
+        period: "Aug 2025 - Dec 2025",
+        course: "IGME-470 - Physical Computing and Alternative Interfaces",
         summary:
             "A collection of Arduino-based physical computing projects focused on sensors, alternative interfaces, and interactive prototyping.",
         role: "Physical Computing Programmer",
@@ -106,14 +106,14 @@ const projects = [
                 They also helped me connect physical systems with interactive Unity projects.`
         },
         links: [
-            { label: "Wordpress", url: "https://hp5817igme470.wordpress.com/", icon: "wordpress" },
+            wordpressLink("https://hp5817igme470.wordpress.com/"),
         ]
     },
     {
         slug: "mouse-only-mod",
         title: "Mouse Only Mod",
-        period: "Jan 2025 – May 2025",
-        course: "IGME-560 — AI for Game Environments",
+        period: "Jan 2025 - May 2025",
+        course: "IGME-560 - AI for Game Environments",
         summary:
             "A Enter the Gungeon mod that enables mouse-only play by overriding default input and automating navigation and dodging.",
         role: "Gameplay / Systems Programmer",
@@ -122,11 +122,7 @@ const projects = [
         image: mouseOnlyCover,
         featured: true,
         extraMedia: [
-            {
-                type: "youtube",
-                title: "Demo Video",
-                src: "https://www.youtube.com/embed/RGl7DA1Xy1c?si=D3PophNjSQnsGIkM"
-            }
+            youtubeMedia("Demo Video", "https://www.youtube.com/embed/RGl7DA1Xy1c?si=D3PophNjSQnsGIkM"),
         ],
         sections: {
             overview:
@@ -152,14 +148,14 @@ const projects = [
                 It made me more confident changing systems in C# without breaking the original game.`
         },
         links: [
-            { label: "GitHub", url: "https://github.com/MaeNaut/EtG-MouseOnlyMod", icon: "github" }
+            githubLink("https://github.com/MaeNaut/EtG-MouseOnlyMod"),
         ]
     },
     {
         slug: "hyperdeath-robotika",
         title: "Hyperdeath Robotika",
-        period: "Jan 2024 – May 2024",
-        course: "IGME-320 — Game Design & Development II",
+        period: "Jan 2024 - May 2024",
+        course: "IGME-320 - Game Design & Development II",
         summary:
             "A Unity top-down shooter built in a 5-person team with gameplay systems, camera movement, and UI/HUD implementation.",
         role: "UI/UX Designer & Programmer",
@@ -167,11 +163,7 @@ const projects = [
         stack: ["Unity", "C#", "Gameplay Systems", "UI / HUD", "Camera System"],
         image: hyperdeathCover,
         extraMedia: [
-            {
-                type: "video",
-                title: "Trailer",
-                src: hyperdeathTrailer
-            }
+            videoMedia("Trailer", hyperdeathTrailer),
         ],
         featured: true,
         sections: {
@@ -196,14 +188,14 @@ const projects = [
                 Working with a team helped me get better at sharing responsibilities and organizing code.`
         },
         links: [
-            { label: "GitHub", url: "https://github.com/Auden-Clifford/Hyperdeath-Robotika", icon: "github" }
+            githubLink("https://github.com/Auden-Clifford/Hyperdeath-Robotika"),
         ]
     },
     {
         slug: "web-development-projects",
         title: "Web Development Projects",
-        period: "Aug 2023 – Dec 2023",
-        course: "IGME-235 — Intro to Game Web Tech",
+        period: "Aug 2023 - Dec 2023",
+        course: "IGME-235 - Intro to Game Web Tech",
         summary:
             "A collection of web development projects built with HTML, CSS, and JavaScript, including API integration and a small game using PixiJS.",
         role: "Frontend Developer",
@@ -234,24 +226,21 @@ const projects = [
                 They helped me learn how to organize code for small web apps and browser games.`
         },
         links: [
-            { label: "Project 1", url: "https://people.rit.edu/hp5817/235/project1/", icon: "external" },
-            { label: "Project 2", url: "https://people.rit.edu/hp5817/235/project2/", icon: "external" },
-            { label: "Project 3", url: "https://people.rit.edu/hp5817/235/project3/", icon: "external" },
+            externalLink("https://people.rit.edu/hp5817/235/project1/", "Project 1"),
+            externalLink("https://people.rit.edu/hp5817/235/project2/", "Project 2"),
+            externalLink("https://people.rit.edu/hp5817/235/project3/", "Project 3"),
         ],
         references: [
-            {
-                title: "Project 1",
-                items: [
-                    { label: "Design Reference", url: gamePageReference, icon: "external" }
-                ]
-            }
+            referenceGroup("Project 1", [
+                externalLink(gamePageReference, "Design Reference"),
+            ]),
         ]
     },
     {
         slug: "gameplay-simulation-projects",
         title: "Gameplay & Simulation Projects",
-        period: "Aug 2023 – Dec 2023",
-        course: "IGME-202 — Interactive Media Development",
+        period: "Aug 2023 - Dec 2023",
+        course: "IGME-202 - Interactive Media Development",
         summary:
             "A collection of Unity projects focused on gameplay programming, steering behaviors, and simulation systems.",
         role: "Gameplay / Simulation Programmer",
@@ -284,38 +273,32 @@ const projects = [
                 They made me more comfortable debugging complex behavior across multiple scripts.`
         },
         links: [
-            { label: "Live Demo 1", url: "https://igme-202-2231.github.io/project-1-MaeNaut/", icon: "gamepad" },
-            { label: "Live Demo 2", url: "https://igme-202-2231.github.io/project-2-MaeNaut/", icon: "gamepad" },
+            gamepadLink("https://igme-202-2231.github.io/project-1-MaeNaut/", "Live Demo 1"),
+            gamepadLink("https://igme-202-2231.github.io/project-2-MaeNaut/", "Live Demo 2"),
         ],
         references: [
-            {
-                title: "Project 1",
-                items: [
-                    { label: "Player Ship", url: "https://www.nicepng.com/ourpic/u2q8a9y3a9r5i1r5_vector-spaces-ship-8-bit-spaceship-sprite/#google_vignette", icon: "external" },
-                    { label: "Enemy Ships", url: "https://opengameart.org/content/spaceship-set-4-pixel-art-space-ships", icon: "external" },
-                    { label: "Asteroid", url: "https://www.seekpng.com/ipng/u2w7e6t4e6q8e6t4_pixel-asteroid-png-jpg-pixel-art-deadpool-logo/", icon: "external" },
-                    { label: "Missile", url: "https://www.clipartkey.com/view/ihxwRbJ_pixel-missile-sprite/", icon: "external" },
-                    { label: "Fireball", url: "https://handsomeunicorn.itch.io/fireball-sprite", icon: "external" },
-                    { label: "Life Icon", url: "https://opengameart.org/content/heart-pixel-art", icon: "external" },
-                    { label: "Background", url: "https://pixabay.com/illustrations/seamless-tile-background-abstract-1315326/", icon: "external" },
-                    { label: "Font", url: "https://www.1001fonts.com/joystix-font.html", icon: "external" }
-                ]
-            },
-            {
-                title: "Project 2",
-                items: [
-                    { label: "Bird Reference", url: "https://www.birdguides.com/species-guide/ioc/gypaetus-barbatus", icon: "external" },
-                    { label: "Sky Image", url: "https://www.freeimages.com/photo/clear-sky-1363026", icon: "external" },
-                    { label: "Airplane Image", url: "https://pngimg.com/image/106463", icon: "external" }
-                ]
-            }
+            referenceGroup("Project 1", [
+                externalLink("https://www.nicepng.com/ourpic/u2q8a9y3a9r5i1r5_vector-spaces-ship-8-bit-spaceship-sprite/#google_vignette", "Player Ship"),
+                externalLink("https://opengameart.org/content/spaceship-set-4-pixel-art-space-ships", "Enemy Ships"),
+                externalLink("https://www.seekpng.com/ipng/u2w7e6t4e6q8e6t4_pixel-asteroid-png-jpg-pixel-art-deadpool-logo/", "Asteroid"),
+                externalLink("https://www.clipartkey.com/view/ihxwRbJ_pixel-missile-sprite/", "Missile"),
+                externalLink("https://handsomeunicorn.itch.io/fireball-sprite", "Fireball"),
+                externalLink("https://opengameart.org/content/heart-pixel-art", "Life Icon"),
+                externalLink("https://pixabay.com/illustrations/seamless-tile-background-abstract-1315326/", "Background"),
+                externalLink("https://www.1001fonts.com/joystix-font.html", "Font"),
+            ]),
+            referenceGroup("Project 2", [
+                externalLink("https://www.birdguides.com/species-guide/ioc/gypaetus-barbatus", "Bird Reference"),
+                externalLink("https://www.freeimages.com/photo/clear-sky-1363026", "Sky Image"),
+                externalLink("https://pngimg.com/image/106463", "Airplane Image"),
+            ]),
         ]
     },
     {
         slug: "blood-of-christ",
         title: "Blood of Christ",
-        period: "Jan 2023 – May 2023",
-        course: "IGME-106 — Game Dev & Algo Prob Solve II",
+        period: "Jan 2023 - May 2023",
+        course: "IGME-106 - Game Dev & Algo Prob Solve II",
         summary:
             "A 2D stealth platformer built in C# using MonoGame as part of a 4-person team, featuring physics, level loading, and file-based map data.",
         role: "Gameplay / Systems Programmer",
@@ -323,11 +306,7 @@ const projects = [
         stack: ["MonoGame", "C#", "Gameplay Programming", "Physics", "Level Systems", "File I/O"],
         image: bloodOfChristCover,
         extraMedia: [
-            {
-                type: "video",
-                title: "Playthrough",
-                src: bloodOfChristPlaythrough
-            }
+            videoMedia("Playthrough", bloodOfChristPlaythrough),
         ],
         featured: false,
         sections: {
@@ -353,15 +332,12 @@ const projects = [
                 It also showed me how important early planning is when a project starts to grow.`
         },
         links: [
-            { label: "GitHub", url: "https://github.com/yaboiedchoi/Blood-of-Christ", icon: "github" },
+            githubLink("https://github.com/yaboiedchoi/Blood-of-Christ"),
         ],
         references: [
-            {
-                title: "",
-                items: [
-                    { label: "Tile Asset Source", url: "https://blackspirestudio.itch.io/medieval-pixel-art-asset-free", icon: "external" }
-                ]
-            }
+            referenceGroup("", [
+                externalLink("https://blackspirestudio.itch.io/medieval-pixel-art-asset-free", "Tile Asset Source"),
+            ]),
         ]
     }
 ];

@@ -1,44 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faSteam, faWordpress } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe, faArrowUpRightFromSquare, faGamepad } from "@fortawesome/free-solid-svg-icons";
-
-const iconMap = {
-    github: faGithub,
-    steam: faSteam,
-    wordpress: faWordpress,
-    globe: faGlobe,
-    gamepad: faGamepad,
-    external: faArrowUpRightFromSquare,
-};
-
-function getLinkDisplay(link) {
-    const isPrimary = link.icon === "github";
-
-    return {
-        icon: iconMap[link.icon] ?? faArrowUpRightFromSquare,
-        label: link.label,
-        className: isPrimary
-            ? "inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-900"
-            : "inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-white",
-    };
-}
-
-function getCollaborationMeta(project) {
-    const isTeamProject = project.collaboration === "team";
-
-    return {
-        badgeLabel: isTeamProject ? "Team Project" : "Solo Project",
-        description: isTeamProject ? "Built collaboratively in a team setting." : "Designed and developed independently.",
-        className: isTeamProject
-            ? "border-red-400 bg-neutral-950 text-red-300 shadow-lg shadow-red-950/30"
-            : "border-blue-400 bg-neutral-950 text-blue-300 shadow-lg shadow-blue-950/30",
-    };
-}
+import ProjectBadge from "../components/ProjectBadge";
+import ProjectBulletList from "../components/ProjectBulletList";
+import ProjectCover from "../components/ProjectCover";
+import ProjectLinkButton from "../components/ProjectLinkButton";
 
 export default function ProjectDetail({ project }) {
     if (!project) return null;
-    const coverImages = Array.isArray(project.image) ? project.image : [project.image];
-    const collaborationMeta = getCollaborationMeta(project);
     const hasReferences = Boolean(project.references?.length);
 
     return (
@@ -46,9 +12,7 @@ export default function ProjectDetail({ project }) {
             <section className="space-y-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Project Detail</p>
-                    <span className={`inline-flex h-8 items-center justify-center rounded-full border px-4 text-[0.72rem] font-bold uppercase tracking-[0.05em] ${collaborationMeta.className}`}>
-                        <span className="relative top-px leading-none">{collaborationMeta.badgeLabel}</span>
-                    </span>
+                    <ProjectBadge project={project} detail className="h-8 px-4 text-[0.72rem] tracking-[0.05em]" />
                 </div>
                 <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
                     <div className="space-y-5">
@@ -60,45 +24,19 @@ export default function ProjectDetail({ project }) {
                         <p className="max-w-3xl text-neutral-300">{project.sections.overview}</p>
 
                         <div className="flex flex-wrap gap-3">
-                            {project.links.map((link) => {
-                                if (!link?.url) return null;
-
-                                const { icon, label, className } = getLinkDisplay(link);
-
-                                return (
-                                    <a
-                                        key={`${label}-${link.url}`}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className={className}
-                                    >
-                                        <FontAwesomeIcon icon={icon} className="fa-lg" /> {label}
-                                    </a>
-                                );
-                            })}
+                            {project.links.map((link) => (
+                                <ProjectLinkButton key={`${link.label}-${link.url}`} link={link} />
+                            ))}
                         </div>
                     </div>
 
                     <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                        {coverImages.length === 1 ? (
-                            <img src={coverImages[0]} alt={project.title} className="aspect-[4/3] w-full object-cover" />
-                        ) : (
-                            <div
-                                className="grid aspect-[4/3] w-full gap-1 bg-white/5"
-                                style={{ gridTemplateColumns: `repeat(${coverImages.length}, minmax(0, 1fr))` }}
-                            >
-                                {coverImages.map((image, index) => (
-                                    <div key={`${project.slug}-cover-${index}`} className="overflow-hidden">
-                                        <img
-                                            src={image}
-                                            alt={`${project.title} cover ${index + 1}`}
-                                            className="h-full w-full object-cover object-top"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                        <ProjectCover
+                            project={project}
+                            imageClassName="aspect-[4/3] w-full object-cover object-top"
+                            gridClassName="grid aspect-[4/3] w-full gap-1 bg-white/5"
+                            imageAltLabel="cover"
+                        />
                     </div>
                 </div>
             </section>
@@ -110,6 +48,7 @@ export default function ProjectDetail({ project }) {
                             {media.title}
                         </h2>
 
+                        {/* Projects can attach different media types while using one shared layout. */}
                         {media.type === "video" && (
                             <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-black">
                                 <video
@@ -163,29 +102,8 @@ export default function ProjectDetail({ project }) {
             </section>
 
             <section className="grid gap-6 lg:grid-cols-2">
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <h2 className="text-xl font-semibold text-white">Key Contributions</h2>
-                    <ul className="mt-4 space-y-3 text-neutral-300">
-                        {project.sections.contributions.map((item) => (
-                            <li key={item} className="flex gap-3">
-                                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                    <h2 className="text-xl font-semibold text-white">Challenges</h2>
-                    <ul className="mt-4 space-y-3 text-neutral-300">
-                        {project.sections.challenges.map((item) => (
-                            <li key={item} className="flex gap-3">
-                                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <ProjectBulletList title="Key Contributions" items={project.sections.contributions} />
+                <ProjectBulletList title="Challenges" items={project.sections.challenges} />
             </section>
 
             <section className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-6">
@@ -215,23 +133,12 @@ export default function ProjectDetail({ project }) {
                                         ) : null}
 
                                         <div className="flex flex-wrap gap-3">
-                                            {group.items?.map((reference) => {
-                                                if (!reference?.url) return null;
-
-                                                const { icon, label, className } = getLinkDisplay(reference);
-
-                                                return (
-                                                    <a
-                                                        key={`${group.title}-${label}-${reference.url}`}
-                                                        href={reference.url}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                        className={className}
-                                                    >
-                                                        <FontAwesomeIcon icon={icon} className="fa-lg" /> {label}
-                                                    </a>
-                                                );
-                                            })}
+                                            {group.items?.map((reference) => (
+                                                <ProjectLinkButton
+                                                    key={`${group.title}-${reference.label}-${reference.url}`}
+                                                    link={reference}
+                                                />
+                                            ))}
                                         </div>
                                     </div>
                                 ))}

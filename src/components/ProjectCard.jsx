@@ -1,45 +1,17 @@
 import { Link } from "react-router-dom";
+import ProjectBadge from "./ProjectBadge";
+import ProjectCover from "./ProjectCover";
 
 export default function ProjectCard({ project }) {
-  const images = Array.isArray(project.image) ? project.image : [project.image];
-  const isTeamProject = project.collaboration === "team";
-  const badgeLabel = isTeamProject ? "Team" : "Solo";
-  const badgeClassName = isTeamProject
-    ? "border-red-400 bg-neutral-950 text-red-300 shadow-lg shadow-red-950/45"
-    : "border-blue-400 bg-neutral-950 text-blue-300 shadow-lg shadow-blue-950/45";
-
   return (
     <Link
       to={`/projects/${project.slug}`}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07]"
     >
-      <span className={`absolute right-4 top-4 z-10 inline-flex h-7 min-w-[3.9rem] items-center justify-center rounded-full border px-3 text-[0.7rem] font-bold uppercase tracking-[0.04em] ${badgeClassName}`}>
-        <span className="relative top-px leading-none">{badgeLabel}</span>
-      </span>
+      <ProjectBadge project={project} className="absolute right-4 top-4 z-10" />
 
       <div className="aspect-[16/9] overflow-hidden">
-        {images.length === 1 ? (
-          <img
-            src={images[0]}
-            alt={project.title}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div
-            className="grid h-full w-full gap-1 bg-white/5"
-            style={{ gridTemplateColumns: `repeat(${images.length}, minmax(0, 1fr))` }}
-          >
-            {images.map((image, index) => (
-              <div key={`${project.slug}-${index}`} className="overflow-hidden">
-                <img
-                  src={image}
-                  alt={`${project.title} preview ${index + 1}`}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        )}
+        <ProjectCover project={project} hoverScale />
       </div>
 
       <div className="flex flex-1 flex-col p-6">
