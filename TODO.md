@@ -1,11 +1,9 @@
 # TODO
 
 ## Now
-- Test external links in the deployed site.
+(No current items)
 
 ## Later
-
-- Deploy the portfolio on Vercel.
-- Add the web portfolio link to the resume.
+(No later items)
 
 

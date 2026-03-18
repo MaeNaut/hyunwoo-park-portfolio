@@ -4,6 +4,8 @@ This repository contains my personal portfolio website.
 
 It highlights my work in game development, graphics programming, modding, web development, and software projects.
 
+Live site: https://hyunwoo-park-portfolio.vercel.app/
+
 ## Tech Stack
 
 - React
@@ -42,6 +44,5 @@ npm run build
 
 ## Notes
 
-- The live site link will be added after deployment.
 - Some project media uses embedded external video links.
 - This portfolio was built through my own design and development process, with AI-assisted support for implementation and iteration.
