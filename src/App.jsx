@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -21,12 +22,23 @@ function RoutedProjectDetail() {
   return <ProjectDetail project={project} />;
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
+  return null;
+}
+
 function AppShell() {
   const location = useLocation();
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
       <div className="mx-auto max-w-7xl px-6 py-6 sm:px-8 lg:px-10">
+        <ScrollToTop />
         <Navbar profile={profile} pathname={location.pathname} />
         <main>
           <Routes>

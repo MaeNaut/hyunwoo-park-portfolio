@@ -31,12 +31,14 @@ export default function ProjectDetail({ project }) {
                     </div>
 
                     <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                        <ProjectCover
-                            project={project}
-                            imageClassName="aspect-[4/3] w-full object-cover object-top"
-                            gridClassName="grid aspect-[4/3] w-full gap-1 bg-white/5"
-                            imageAltLabel="cover"
-                        />
+                        <div className="aspect-[4/3]">
+                            <ProjectCover
+                                project={project}
+                                imageClassName="h-full w-full object-cover object-center"
+                                gridClassName="grid h-full w-full gap-1 bg-white/5"
+                                imageAltLabel="cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
