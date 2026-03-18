@@ -1,7 +1,7 @@
 import SectionTitle from "../components/SectionTitle";
 import ProjectCard from "../components/ProjectCard";
 
-export default function Projects({ projects, onOpenProject }) {
+export default function Projects({ projects }) {
     return (
         <div className="space-y-8">
             <SectionTitle
@@ -12,7 +12,7 @@ export default function Projects({ projects, onOpenProject }) {
 
             <div className="grid gap-6 md:grid-cols-2">
                 {projects.map((project) => (
-                    <ProjectCard key={project.slug} project={project} onOpenProject={onOpenProject} />
+                    <ProjectCard key={project.slug} project={project} />
                 ))}
             </div>
         </div>

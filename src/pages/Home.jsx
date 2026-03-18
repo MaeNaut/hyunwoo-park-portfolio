@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -6,7 +7,7 @@ import SectionTitle from "../components/SectionTitle";
 import englishPronunciation from "../assets/profile/hyunwoo-english-pronunciation.mp3";
 import koreanPronunciation from "../assets/profile/hyunwoo-korean-pronunciation.mp3";
 
-export default function Home({ profile, projects, onOpenProject }) {
+export default function Home({ profile, projects }) {
     const featuredProjects = projects.filter((p) => p.featured);
     const englishAudioRef = useRef(null);
     const koreanAudioRef = useRef(null);
@@ -97,7 +98,7 @@ export default function Home({ profile, projects, onOpenProject }) {
                                             className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-neutral-100 transition hover:border-white/20 hover:bg-white/10"
                                         >
                                             <span>English pronunciation</span>
-                                            <FontAwesomeIcon icon={faCirclePlay}  className="fa-lg" />
+                                            <FontAwesomeIcon icon={faCirclePlay} className="fa-lg" />
                                         </button>
 
                                         <button
@@ -106,7 +107,7 @@ export default function Home({ profile, projects, onOpenProject }) {
                                             className="flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-neutral-100 transition hover:border-white/20 hover:bg-white/10"
                                         >
                                             <span>Korean pronunciation</span>
-                                            <FontAwesomeIcon icon={faCirclePlay}  className="fa-lg" />
+                                            <FontAwesomeIcon icon={faCirclePlay} className="fa-lg" />
                                         </button>
 
                                         <div className="space-y-2 text-sm leading-6 text-neutral-300">
@@ -216,10 +217,10 @@ export default function Home({ profile, projects, onOpenProject }) {
                 />
                 <div className="grid gap-6 lg:grid-cols-3">
                     {featuredProjects.map((project) => (
-                        <button
+                        <Link
                             key={project.slug}
-                            onClick={() => onOpenProject(project.slug)}
-                            className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20"
+                            to={`/projects/${project.slug}`}
+                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20"
                         >
                             <span className={`absolute right-4 top-4 z-10 inline-flex h-7 min-w-[3.9rem] items-center justify-center rounded-full border px-3 text-[0.7rem] font-bold uppercase tracking-[0.04em] ${getProjectBadge(project).className}`}>
                                 <span className="relative top-px leading-none">{getProjectBadge(project).label}</span>
@@ -235,7 +236,7 @@ export default function Home({ profile, projects, onOpenProject }) {
                                 </div>
                                 <p className="text-sm leading-6 text-neutral-300">{project.summary}</p>
                             </div>
-                        </button>
+                        </Link>
                     ))}
                 </div>
             </section>

@@ -1,4 +1,6 @@
-export default function ProjectCard({ project, onOpenProject }) {
+import { Link } from "react-router-dom";
+
+export default function ProjectCard({ project }) {
   const images = Array.isArray(project.image) ? project.image : [project.image];
   const isTeamProject = project.collaboration === "team";
   const badgeLabel = isTeamProject ? "Team" : "Solo";
@@ -7,9 +9,8 @@ export default function ProjectCard({ project, onOpenProject }) {
     : "border-blue-400 bg-neutral-950 text-blue-300 shadow-lg shadow-blue-950/45";
 
   return (
-    <button
-      type="button"
-      onClick={() => onOpenProject(project.slug)}
+    <Link
+      to={`/projects/${project.slug}`}
       className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07]"
     >
       <span className={`absolute right-4 top-4 z-10 inline-flex h-7 min-w-[3.9rem] items-center justify-center rounded-full border px-3 text-[0.7rem] font-bold uppercase tracking-[0.04em] ${badgeClassName}`}>
@@ -72,6 +73,6 @@ export default function ProjectCard({ project, onOpenProject }) {
           ))}
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
