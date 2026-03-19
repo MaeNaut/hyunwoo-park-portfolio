@@ -6,7 +6,7 @@ const profile = {
     bio: "Game Design & Development student at RIT with experience in gameplay programming, UI systems, modding, and frontend development. Interested in game, web, and software roles.",
     email: "qkrgus7799@gmail.com",
     phone: "(929) 988-2653",
-    linkedin: "https://linkedin.com/in/hyunwoo-park-rit/",
+    linkedin: "https://www.linkedin.com/in/hyunwoo-park-dev/",
     github: "https://github.com/MaeNaut",
     heroImage: profilePhoto,
     about: [
