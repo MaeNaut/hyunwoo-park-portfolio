@@ -6,12 +6,16 @@ const previewSections = [
     },
     {
         title: "Education",
-        headerLines: ["w-28", "w-20"],
+        headerLines: ["w-28"],
+        lines: ["w-20"],
         sideLine: "w-16",
     },
     {
         title: "Skills",
-        lines: ["w-1/2", "w-2/3"],
+        gridLines: [
+            ["w-10", "w-12", "w-11"],
+            ["w-11", "w-10", "w-12"],
+        ],
     },
     {
         title: "Project",
@@ -33,7 +37,7 @@ function PreviewLine({ widthClassName, dark = false }) {
     );
 }
 
-function PreviewSection({ title, lines = [], headerLines, sideLine }) {
+function PreviewSection({ title, lines = [], headerLines, sideLine, gridLines }) {
     return (
         <div>
             <div className="border-b-[1.5px] border-neutral-900 pb-0.5">
@@ -53,6 +57,21 @@ function PreviewSection({ title, lines = [], headerLines, sideLine }) {
                             ))}
                         </div>
                         {sideLine ? <PreviewLine widthClassName={sideLine} /> : null}
+                    </div>
+                ) : null}
+
+                {gridLines?.length ? (
+                    <div className={`${headerLines ? "mt-1.5" : ""} space-y-1.5`}>
+                        {gridLines.map((row, rowIndex) => (
+                            <div key={`${title}-grid-${rowIndex}`} className="grid grid-cols-3 gap-2">
+                                {row.map((widthClassName, columnIndex) => (
+                                    <PreviewLine
+                                        key={`${title}-${rowIndex}-${columnIndex}`}
+                                        widthClassName={widthClassName}
+                                    />
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 ) : null}
 

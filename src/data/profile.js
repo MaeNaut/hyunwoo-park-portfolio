@@ -43,11 +43,11 @@ const profile = {
         },
         {
             category: "Engines & Tools",
-            items: ["Unity", "MonoGame", "Direct3D 11", "tModLoader", "ETGMod", "React", "PixiJS", "Git", "GitHub"]
+            items: ["Unity", "Direct3D 11", "tModLoader", "ETGMod", "React", "Git", "GitHub"]
         },
         {
             category: "Gameplay & Systems",
-            items: ["Gameplay Programming", "Input Systems", "AI", "State Machines", "Physics", "UI / HUD", "Simulation", "File I/O"]
+            items: ["Gameplay Programming", "Input Systems", "AI", "State Machines", "Physics", "UI / HUD"]
         },
         {
             category: "Technical Skills",
