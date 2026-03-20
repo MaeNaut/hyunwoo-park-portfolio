@@ -81,7 +81,7 @@ export default function Home({ profile, projects }) {
             <section className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
                 <div className="space-y-6">
                     <p className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs text-neutral-300 sm:text-sm">
-                        Available for co-op / internship roles
+                        Available for full-time co-op / internship roles
                     </p>
 
                     <div className="space-y-4">
