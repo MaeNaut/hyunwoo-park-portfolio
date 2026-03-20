@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import SectionTitle from "../components/SectionTitle";
 
 export default function Contact({ profile }) {
@@ -13,11 +13,6 @@ export default function Contact({ profile }) {
                     {profile.email}
                 </a>
             ),
-        },
-        {
-            label: "Phone",
-            icon: faPhone,
-            content: <p className="mt-2 text-white">{profile.phone}</p>,
         },
         {
             label: "LinkedIn",
@@ -35,10 +30,10 @@ export default function Contact({ profile }) {
             <SectionTitle
                 eyebrow="Contact"
                 title="Get in touch"
-                body="If you'd like to connect, reach out by email, phone, or LinkedIn."
+                body="If you'd like to connect, reach out by email or LinkedIn."
             />
 
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2">
                 {contactItems.map((item) => (
                     <div key={item.label} className="rounded-3xl border border-white/10 bg-white/5 p-6">
                         <FontAwesomeIcon icon={item.icon} className="fa-lg" />
