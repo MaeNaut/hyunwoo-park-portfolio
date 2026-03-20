@@ -241,8 +241,8 @@ export default function Home({ profile, projects }) {
                             onClick={() => saveScrollPosition(location.pathname)}
                             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch"
                         >
-                            <ProjectBadge project={primaryFeaturedProject} className="absolute right-4 top-4 z-10" />
-                            <div className="aspect-[16/10] overflow-hidden lg:h-full lg:min-h-[21rem] lg:aspect-auto">
+                            <div className="relative aspect-[16/10] overflow-hidden lg:h-full lg:min-h-[21rem] lg:aspect-auto">
+                                <ProjectBadge project={primaryFeaturedProject} className="absolute right-4 top-4 z-10" />
                                 <ProjectCover
                                     project={primaryFeaturedProject}
                                     hoverScale
@@ -297,7 +297,7 @@ export default function Home({ profile, projects }) {
                 <div>
                     <SectionTitle
                         eyebrow="Skills"
-                        title="Technical skills"
+                        title="Tools and strengths"
                         body="A mix of languages, engines, tools, and systems I use across my projects."
                     />
                 </div>

@@ -12,10 +12,7 @@ const previewSections = [
     },
     {
         title: "Skills",
-        gridLines: [
-            ["w-10", "w-12", "w-11"],
-            ["w-11", "w-10", "w-12"],
-        ],
+        lines: ["w-full", "w-[88%]"],
     },
     {
         title: "Project",
