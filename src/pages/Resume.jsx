@@ -7,7 +7,7 @@ import ResumePreview from "../components/ResumePreview";
 import generalResumePdf from "../assets/resumes/Hyunwoo_Park_Resume.pdf";
 
 export default function Resume({ profile }) {
-    const resumeLastUpdated = "March 16, 2026";
+    const resumeLastUpdated = "June 16, 2026";
     const resumeActions = [
         {
             label: "Open Resume",

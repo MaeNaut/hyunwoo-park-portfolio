@@ -3,14 +3,14 @@ import profilePhoto from "../assets/profile/profile-photo.jpg";
 const profile = {
     name: "Hyunwoo Park",
     title: "Game / Web / Software Developer",
-    bio: "Game Design & Development student at RIT with experience in gameplay programming, UI systems, modding, and frontend development. Interested in game, web, and software roles.",
+    bio: "Recent Game Design & Development graduate from RIT with experience in gameplay programming, UI systems, modding, and frontend development. Interested in game, web, and software roles.",
     email: "qkrgus7799@gmail.com",
     phone: "(929) 988-2653",
     linkedin: "https://www.linkedin.com/in/hyunwoo-park-dev/",
     github: "https://github.com/MaeNaut",
     heroImage: profilePhoto,
     about: [
-        "I am a Game Design and Development student at RIT. I enjoy building interactive projects with a focus on gameplay, UI, input, and player experience.",
+        "I am a recent Game Design and Development graduate from RIT. I enjoy building interactive projects with a focus on gameplay, UI, input, and player experience.",
         "My main background is in C#, Unity, and gameplay programming. I have worked on mods, combat systems, physics, HUDs, and AI in both team and solo projects.",
         "I also build web projects with JavaScript, HTML, CSS, React, and APIs. In all of my work, I try to keep things clear, responsive, and organized."
     ],
@@ -18,7 +18,7 @@ const profile = {
         {
             school: "Rochester Institute of Technology (RIT)",
             location: "Rochester, NY",
-            period: "Expected May 2026",
+            period: "Aug 2022 - May 2026",
             program: "Bachelor of Science in Game Design and Development",
             gpa: "3.70",
             highlights: [
