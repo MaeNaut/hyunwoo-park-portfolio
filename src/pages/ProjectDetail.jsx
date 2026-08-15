@@ -2,9 +2,15 @@ import ProjectBadge from "../components/ProjectBadge";
 import ProjectBulletList from "../components/ProjectBulletList";
 import ProjectCover from "../components/ProjectCover";
 import ProjectLinkButton from "../components/ProjectLinkButton";
+import ProjectCaseStudy from "./ProjectCaseStudy";
 
 export default function ProjectDetail({ project }) {
     if (!project) return null;
+
+    if (project.detailVariant === "case-study") {
+        return <ProjectCaseStudy project={project} />;
+    }
+
     const hasReferences = Boolean(project.references?.length);
 
     return (

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import RouteMetadata from "./components/RouteMetadata";
 import profile from "./data/profile";
 import projects from "./data/projects";
 import { readScrollPosition } from "./utils/scrollMemory";
@@ -48,6 +49,13 @@ function AppShell() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
+      <a
+        href="#main-content"
+        className="fixed left-6 top-4 z-50 -translate-y-24 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-950 transition-transform focus:translate-y-0"
+      >
+        Skip to main content
+      </a>
+      <RouteMetadata pathname={location.pathname} profile={profile} projects={projects} />
       <div className="fixed inset-x-0 top-3 z-30 sm:top-4">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <Navbar profile={profile} pathname={location.pathname} locationState={location.state} />
@@ -56,7 +64,7 @@ function AppShell() {
 
       <div className="mx-auto max-w-7xl px-6 pt-30 pb-6 sm:px-8 sm:pt-32 lg:px-10">
         <ScrollManager />
-        <main>
+        <main id="main-content" tabIndex="-1">
           <Routes>
             <Route path="/" element={<Home profile={profile} projects={projects} />} />
             <Route path="/projects" element={<Projects projects={projects} />} />

@@ -12,6 +12,7 @@ import shmupCover from "../assets/projects/igme202/shmup-cover.png";
 import boidsCover from "../assets/projects/igme202/boids-cover.png";
 import bloodOfChristCover from "../assets/projects/bloodOfChrist/bloodOfChrist-cover.png";
 import bloodOfChristPlaythrough from "../assets/projects/bloodOfChrist/bloodOfChrist-playthrough.mp4";
+import pokepilotProject from "./pokepilotProject";
 import {
     externalLink,
     gamepadLink,
@@ -26,6 +27,7 @@ import {
 } from "./projectBuilders";
 
 const projects = [
+    pokepilotProject,
     {
         slug: "terraria-mod",
         title: "The Good, The Bad, and The Intoxicated",
@@ -229,7 +231,7 @@ const projects = [
         collaboration: "solo",
         stack: ["HTML", "CSS", "JavaScript", "PixiJS", "API", "Frontend Development"],
         image: gamePageCover,
-        featured: true,
+        featured: false,
         sections: {
             overview:
                 "This work combines three web development projects built with HTML, CSS, and JavaScript. The projects include a custom game information page, a Giphy search tool, and a small browser game made with PixiJS. They helped me learn frontend basics, API use, and interactive programming.",

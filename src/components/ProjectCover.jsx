@@ -10,13 +10,16 @@ export default function ProjectCover({
 }) {
     const images = getProjectImages(project);
     const hoverClassName = hoverScale ? " transition duration-500 group-hover:scale-105" : "";
+    const resolvedImageClassName = project.imageFit === "contain"
+        ? imageClassName.replace("object-cover", "object-contain")
+        : imageClassName;
 
     if (images.length === 1) {
         return (
             <img
                 src={images[0]}
                 alt={project.title}
-                className={`${imageClassName}${hoverClassName}`}
+                className={`${resolvedImageClassName}${hoverClassName}`}
             />
         );
     }
@@ -32,7 +35,7 @@ export default function ProjectCover({
                     <img
                         src={image}
                         alt={`${project.title} ${imageAltLabel} ${index + 1}`}
-                        className={`${imageClassName}${hoverClassName}`}
+                        className={`${resolvedImageClassName}${hoverClassName}`}
                     />
                 </div>
             ))}

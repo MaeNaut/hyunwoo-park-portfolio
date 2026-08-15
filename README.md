@@ -18,12 +18,14 @@ Live site: https://hyunwoo-park-portfolio.vercel.app/
 
 - Multi-page portfolio with URL-based routing
 - Project detail pages for featured and archived work
+- A long-form PokePilot product case study alongside the compact legacy project format
 - Responsive layout for desktop, tablet, and mobile
 - Resume and contact pages
 - Embedded videos, images, and external project links
 
 ## Project Highlights
 
+- [PokePilot](https://pokepilot-ai.vercel.app), an AI-assisted competitive team builder and damage calculator
 - Terraria modding project with custom enemy and boss AI
 - Direct3D 11 graphics engine project built in C++
 - Web development project collection
