@@ -48,7 +48,7 @@ const pokepilotProject = {
             "The deployed public beta now keeps team building, damage calculation, and strategy analysis in one shared workspace across desktop, tablet, and mobile.",
     },
     links: [
-        globeLink("https://pokepilot-ai.vercel.app", "Live App"),
+        globeLink("https://pokepilot.app", "Live App"),
         githubLink("https://github.com/MaeNaut/pokepilot"),
     ],
     caseStudy: {

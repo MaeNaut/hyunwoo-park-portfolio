@@ -25,7 +25,7 @@ Live site: https://hyunwoo-park-portfolio.vercel.app/
 
 ## Project Highlights
 
-- [PokePilot](https://pokepilot-ai.vercel.app), an AI-assisted competitive team builder and damage calculator
+- [PokePilot](https://pokepilot.app), an AI-assisted competitive team builder and damage calculator
 - Terraria modding project with custom enemy and boss AI
 - Direct3D 11 graphics engine project built in C++
 - Web development project collection
