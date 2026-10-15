@@ -11,7 +11,7 @@ const profile = {
     about: [
         "I study Game Design and Development at RIT and expect to graduate in Fall 2026. I enjoy building interactive projects with a focus on gameplay, UI, input, and player experience.",
         "My main background is in C#, Unity, and gameplay programming. I have worked on mods, combat systems, physics, HUDs, and AI in both team and solo projects.",
-        "I also build web projects with JavaScript, HTML, CSS, React, and APIs. In all of my work, I try to keep things clear, responsive, and organized."
+        "I also build full-stack web products with React and TypeScript. PokePilot has given me hands-on experience with Cloudflare Workers, SQL-backed account storage, authentication, AI evaluation, and automated releases. I bring the same focus on clear interactions and responsive feedback to both games and web apps."
     ],
     education: [
         {
@@ -38,7 +38,7 @@ const profile = {
     skills: [
         {
             category: "Languages",
-            items: ["C#", "C++", "HLSL", "JavaScript", "HTML", "CSS"]
+            items: ["C#", "C++", "HLSL", "TypeScript", "JavaScript", "HTML", "CSS", "SQL"]
         },
         {
             category: "Engines & Tools",
@@ -50,7 +50,7 @@ const profile = {
         },
         {
             category: "Technical Skills",
-            items: ["Frontend Development", "Graphics Programming", "Engine Programming", "API Integration", "Physical Computing", "Serial Communication", "Modding"]
+            items: ["Full-Stack Web Development", "API Integration", "Authentication", "AI Evaluation", "Automated Testing", "Graphics Programming", "Engine Programming", "Physical Computing", "Serial Communication", "Modding"]
         }
     ]
 };
